@@ -1,29 +1,31 @@
 # Shark Bake-Off: Database Benchmarking Project Plan
 
-**Version:** 1.0
+**Version:** 1.1
 **Date:** 2026-01-02
-**Status:** Planning Complete - Ready for Implementation
+**Status:** Planning Complete - Aligned with IPT Requirements
 
 ---
 
 ## Table of Contents
 
 1. [Executive Summary](#executive-summary)
-2. [Project Overview](#project-overview)
-3. [Evaluation Dimensions](#evaluation-dimensions)
-4. [Databases Under Test](#databases-under-test)
-5. [Languages and Drivers](#languages-and-drivers)
-6. [Performance Requirements](#performance-requirements)
-7. [Curation Requirements](#curation-requirements)
-8. [Schema Evolution Requirements](#schema-evolution-requirements)
-9. [Data Integration Context](#data-integration-context)
-10. [Benchmark Scenarios](#benchmark-scenarios)
-11. [Test Matrix](#test-matrix)
-12. [Architecture Decision Framework](#architecture-decision-framework)
-13. [Mitigation Strategies](#mitigation-strategies)
-14. [Cost Analysis Framework](#cost-analysis-framework)
-15. [Implementation Phases](#implementation-phases)
-16. [Deliverables](#deliverables)
+2. [System Architecture Context](#system-architecture-context)
+3. [IPT Requirements Alignment](#ipt-requirements-alignment)
+4. [Project Overview](#project-overview)
+5. [Evaluation Dimensions](#evaluation-dimensions)
+6. [Databases Under Test](#databases-under-test)
+7. [Languages and Drivers](#languages-and-drivers)
+8. [Performance Requirements](#performance-requirements)
+9. [Curation Requirements](#curation-requirements)
+10. [Schema Evolution Requirements](#schema-evolution-requirements)
+11. [Data Integration Context](#data-integration-context)
+12. [Benchmark Scenarios](#benchmark-scenarios)
+13. [Test Matrix](#test-matrix)
+14. [Architecture Decision Framework](#architecture-decision-framework)
+15. [Mitigation Strategies](#mitigation-strategies)
+16. [Cost Analysis Framework](#cost-analysis-framework)
+17. [Implementation Phases](#implementation-phases)
+18. [Deliverables](#deliverables)
 
 ---
 
@@ -47,6 +49,138 @@ This benchmark evaluates whether a graph database (Neo4j, Memgraph) can meet the
 2. **Phase B:** Head-to-head comparison across all evaluation dimensions
 3. **Phase C:** Apply "Is Graph Fast Enough?" decision criteria
 4. **Phase D:** Implement mitigation strategies if needed
+
+---
+
+## System Architecture Context
+
+### Entity API (E-API) Architecture
+
+The KB is one of several backing stores behind a unified Entity API. This architecture, being developed in parallel, provides:
+
+- **Single coherent HTTP interface** for all entity data
+- **Abstraction layer** allowing backing store swaps without API changes
+- **Installation customization** for different entity types/attributes
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                              USER / APPLICATION                         │
+└─────────────────────────────────────────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           ENTITY API (E-API)                            │
+│                                                                         │
+│  • Single HTTP interface for all entity queries                         │
+│  • Routes queries to appropriate backing stores                         │
+│  • Aggregates responses from multiple stores                            │
+│  • Enables backing store changes without API modifications              │
+└─────────────────────────────────────────────────────────────────────────┘
+                                      │
+              ┌───────────────────────┼───────────────────────┐
+              ▼                       ▼                       ▼
+┌─────────────────────┐   ┌─────────────────────┐   ┌─────────────────────┐
+│    TRACK STORE      │   │   KNOWLEDGE BASE    │   │   ACTIVITY STORE    │
+│                     │   │                     │   │                     │
+│  Live track data    │   │  Curated objects    │   │  Detected activities│
+│  Real-time updates  │   │  (THIS BENCHMARK)   │   │  Historical events  │
+└─────────────────────┘   └─────────────────────┘   └─────────────────────┘
+              │                       │                       │
+              └───────────────────────┴───────────────────────┘
+                                      │
+                                      ▼
+                          ┌─────────────────────┐
+                          │     GeoServer       │
+                          │   (Contextual data) │
+                          └─────────────────────┘
+```
+
+### Implications for This Benchmark
+
+| Aspect | Implication |
+|--------|-------------|
+| **KB Role** | One of multiple backing stores, not the primary API |
+| **API Design** | E-API handles user-facing API; KB provides data store |
+| **Store Swap** | E-API abstraction allows KB changes without user impact |
+| **Multi-store Queries** | Single user query may hit KB + Track + Activity stores |
+| **Latency Budget** | KB should be optimized; aggregate latency TBD by E-API team |
+
+---
+
+## IPT Requirements Alignment
+
+### Requirements Coverage Matrix
+
+| IPT Requirement | Description | Benchmark Coverage | Status |
+|-----------------|-------------|-------------------|--------|
+| **KB-Req-0001** | Multi Data Source Query (E-API) | E-API architecture context | Documented |
+| **KB-Req-0002** | Performant Object Store | Core benchmark focus | Full coverage |
+| **KB-Req-0003** | Accurate & Accessible Data | Data quality, uniqueness | Covered via curation |
+| **KB-Req-0004** | Data Feedback Loop | Curation workflow testing | Full coverage |
+| **KB-Req-0005** | Cross Data Store Interrogation | Multi-hop queries | Full coverage |
+| **KB-Req-0006** | User Friendly Search | Fuzzy search, relevance | Separate evaluation |
+| **KB-Req-0007** | Curation | All curation requirements | Full coverage |
+| **KB-Req-0008** | Query Other Data Stores | Relationship queries | Full coverage |
+| **KB-Req-0009** | RBAC | Security model | Noted, not primary focus |
+| **KB-Req-0010** | Export | API capability | Out of scope |
+| **KB-Req-0011** | Notes | Application feature | Out of scope |
+| **KB-Req-0012** | Lists | Application feature | Out of scope |
+| **KB-Req-0013** | Visualize Data | Curation UI assessment | Covered (CT7) |
+| **KB-Req-0014** | Images | Blob storage | Out of scope |
+| **KB-Req-0015** | Apply Rule Set for ID | Rules engine | Out of scope |
+
+### Key IPT Requirements Addressed
+
+#### KB-Req-0002: Performant Object Store (Must Have)
+
+| Sub-requirement | IPT Specification | Benchmark Coverage |
+|-----------------|-------------------|-------------------|
+| 2.1 | Fast retrieval across domains | Performance scenarios S1-S9 |
+| 2.2 | Efficient API for M2M exchange | Latency thresholds |
+| 2.3 | Consistent, reliable, fast | p99 thresholds at scale |
+| 2.5 | Admin and Curation UI | Curation scenarios CT1-CT7 |
+| 2.6 | Query based on properties | Cross-domain queries |
+
+#### KB-Req-0004: Data Feedback Loop (Must Have)
+
+| Sub-requirement | IPT Specification | Benchmark Coverage |
+|-----------------|-------------------|-------------------|
+| 4.1 | User-friendly interface for edits | Curation UI assessment |
+| 4.2 | Log all edits | Audit trail requirement (C11) |
+| 4.3 | Queue of proposed edits | Curation workflow testing |
+| 4.4 | Feedback on acceptance/rejection | Curator notification flow |
+
+#### KB-Req-0007: Curation (Must Have)
+
+| Sub-requirement | IPT Specification | Benchmark Coverage |
+|-----------------|-------------------|-------------------|
+| 7.1 | Historical data about changes | Audit trail (C11) |
+| 7.2 | Batch updates/additions | Batch operations (C8) |
+| 7.3 | Various display options | Visualization (CT7) |
+| 7.4 | Automated testing for conflicts | Schema evolution testing |
+| 7.5 | Enforceable constraints | Neo4j constraints evaluation |
+| 7.7 | Data update module with diff | Reconciliation context |
+
+### Items Deferred to Separate Evaluations
+
+| Item | Rationale |
+|------|-----------|
+| **Fuzzy Search (KB-Req-0006)** | Important capability, but best evaluated separately with search-specific metrics |
+| **RBAC (KB-Req-0009)** | Security architecture decision, minimal impact on DB selection |
+| **Notes/Lists (KB-Req-0011/0012)** | Application features, not KB architecture concerns |
+| **Images (KB-Req-0014)** | Blob storage question, orthogonal to graph vs relational |
+| **Rules Engine (KB-Req-0015)** | Separate service that consumes KB data |
+
+### Performance Clarification
+
+The IPT document mentions "microseconds" for object retrieval. Clarification:
+
+> **Interpretation:** "Microseconds" reflects the goal that even with thousands of parallel queries, delays should not be noticeable. As long as all parallel queries return under threshold at scale, **100ms p99 is acceptable**.
+
+This benchmark validates performance at:
+- **Peak load:** 1,000 queries per second
+- **Stress test:** 1,750 queries per second
+- **Threshold:** p99 < 100ms for identifier lookups
 
 ---
 
@@ -733,4 +867,5 @@ CREATE TABLE track_activity_log (
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2026-01-02 | Planning Session | Initial comprehensive plan |
+| 1.1 | 2026-01-02 | Planning Session | Added IPT requirements alignment, E-API architecture context, performance clarification |
 
