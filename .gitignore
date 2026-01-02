@@ -1,0 +1,52 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Java
+*.class
+*.jar
+target/
+*.log
+
+# Rust
+/target/
+Cargo.lock
+
+# Node (for tooling)
+node_modules/
+
+# Docker
+.docker/
+
+# Benchmark results (may want to track separately)
+# results/
+
+# Secrets
+*.pem
+*.key
+credentials.json
