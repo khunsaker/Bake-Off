@@ -1,8 +1,8 @@
 # Shark Bake-Off: Database Benchmarking Project Plan
 
-**Version:** 1.1
+**Version:** 1.2
 **Date:** 2026-01-02
-**Status:** Planning Complete - Aligned with IPT Requirements
+**Status:** Planning Complete - Aligned with IPT Requirements and Vision
 
 ---
 
@@ -11,21 +11,22 @@
 1. [Executive Summary](#executive-summary)
 2. [System Architecture Context](#system-architecture-context)
 3. [IPT Requirements Alignment](#ipt-requirements-alignment)
-4. [Project Overview](#project-overview)
-5. [Evaluation Dimensions](#evaluation-dimensions)
-6. [Databases Under Test](#databases-under-test)
-7. [Languages and Drivers](#languages-and-drivers)
-8. [Performance Requirements](#performance-requirements)
-9. [Curation Requirements](#curation-requirements)
-10. [Schema Evolution Requirements](#schema-evolution-requirements)
-11. [Data Integration Context](#data-integration-context)
-12. [Benchmark Scenarios](#benchmark-scenarios)
-13. [Test Matrix](#test-matrix)
-14. [Architecture Decision Framework](#architecture-decision-framework)
-15. [Mitigation Strategies](#mitigation-strategies)
-16. [Cost Analysis Framework](#cost-analysis-framework)
-17. [Implementation Phases](#implementation-phases)
-18. [Deliverables](#deliverables)
+4. [Knowledge Generation Vision](#knowledge-generation-vision)
+5. [Project Overview](#project-overview)
+6. [Evaluation Dimensions](#evaluation-dimensions)
+7. [Databases Under Test](#databases-under-test)
+8. [Languages and Drivers](#languages-and-drivers)
+9. [Performance Requirements](#performance-requirements)
+10. [Curation Requirements](#curation-requirements)
+11. [Schema Evolution Requirements](#schema-evolution-requirements)
+12. [Data Integration Context](#data-integration-context)
+13. [Benchmark Scenarios](#benchmark-scenarios)
+14. [Test Matrix](#test-matrix)
+15. [Architecture Decision Framework](#architecture-decision-framework)
+16. [Mitigation Strategies](#mitigation-strategies)
+17. [Cost Analysis Framework](#cost-analysis-framework)
+18. [Implementation Phases](#implementation-phases)
+19. [Deliverables](#deliverables)
 
 ---
 
@@ -181,6 +182,131 @@ This benchmark validates performance at:
 - **Peak load:** 1,000 queries per second
 - **Stress test:** 1,750 queries per second
 - **Threshold:** p99 < 100ms for identifier lookups
+
+---
+
+## Knowledge Generation Vision
+
+> **Note:** This section describes the forward-looking vision for knowledge generation and advanced analytics. While being socialized across the organization, it provides essential context for why certain capabilities matter and informs benchmark design.
+
+### Current State: Data Science Impractical
+
+The current KB suffers from data quality issues that make meaningful data science impractical:
+
+| Issue | Impact on Data Science |
+|-------|----------------------|
+| **Intermittent updates** | Stale data produces unreliable analysis |
+| **Inconsistent curation** | Data quality varies, undermining confidence |
+| **Siloed structure** | Complex relationships obscured |
+| **Manual integration required** | Analysis takes weeks instead of hours |
+
+**Current reality:** Valuable data science on the KB is impractical due to these foundational issues.
+
+### Future State: Pre-eminent Data Science Tool
+
+The KB overhaul is designed to transform the Knowledge Base into a **pre-eminent data science tool** capable of producing invaluable predictive analysis.
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    KNOWLEDGE GENERATION TRANSFORMATION                  │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   TODAY                              FUTURE                             │
+│   ─────                              ──────                             │
+│   • Data science impractical         • Pre-eminent data science tool    │
+│   • Weeks of manual analysis         • Hours of automated analysis      │
+│   • Hidden relationships             • Discovered relationships         │
+│   • Reactive insights                • Predictive analysis              │
+│   • Single-domain queries            • Cross-domain discovery           │
+│                                                                         │
+│   Enablers:                                                             │
+│   • Consistent, accurate curation                                       │
+│   • Real-time updates                                                   │
+│   • Graph-based relationship modeling                                   │
+│   • AI/LLM integration readiness                                        │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### Vision Vignette: Advanced Analytics Discovery
+
+The following vignette illustrates the transformative potential of a graph-based KB for complex analysis:
+
+**Scenario:** A data scientist supports a Joint Task Force, analyzing vulnerabilities and opportunities across all services.
+
+**Analysis Performed:**
+1. Query force posture and air defense capabilities (ship, airborne, land-based)
+2. Traverse operational readiness, current status, and availability schedules
+3. Discover temporal patterns in coverage gaps
+4. Overlay offensive/defensive system ranges with terrain, weather, fuel factors
+5. Identify hidden dependencies between systems and support assets
+
+**Key Discovery:**
+> "A recurring 6-hour window every fourth day when a critical sector has reduced air defense capability due to limited support asset availability during a gap in Aircraft Carrier Flight Cycles."
+
+**Why Graph Databases Excel Here:**
+
+| Capability | Relational Approach | Graph Approach |
+|------------|---------------------|----------------|
+| Multi-hop dependency discovery | Complex recursive CTEs, multiple joins | Natural MATCH traversal |
+| Temporal pattern analysis | Multiple queries, manual correlation | Single traversal with time properties |
+| Cross-domain integration | Separate queries per domain, manual merge | Single query across all domains |
+| Hidden relationship discovery | Nearly impossible at scale | Native graph algorithm capability |
+| Range network visualization | Application logic required | Graph algorithms (GDS/MAGE) |
+
+**Outcome:**
+- Analysis that would take **weeks** with relational systems completed in **hours**
+- Hidden vulnerabilities revealed through multi-hop relationship discovery
+- Strategic recommendations (adjust carrier flight cycles) derived from connected data
+- Actionable intelligence that reshapes operational planning
+
+### Query Expressiveness Dimension
+
+This vision reveals that the benchmark question isn't only "Is Graph Fast Enough?" but also:
+
+> **"Can Relational Even Express These Queries Practically?"**
+
+For complex knowledge generation queries:
+
+| Query Type | PostgreSQL | Neo4j/Memgraph |
+|------------|------------|----------------|
+| Find all entities N hops from X | Recursive CTE (complex, slow) | `MATCH path = (x)-[*1..N]->(y)` |
+| Discover unexpected connections | Impractical | Graph algorithms |
+| Temporal pattern across relationships | Very complex | Natural with time properties |
+| "What depends on what" chains | Multiple self-joins | Single traversal |
+
+### Additional Benchmark Scenarios (Vision-Driven)
+
+These scenarios test knowledge generation capabilities highlighted in the vision:
+
+| ID | Scenario | Description | Success Metric |
+|----|----------|-------------|----------------|
+| S15 | Dependency chain discovery | Find hidden dependencies (Asset → Support → Availability) | Query expressible and < 1s |
+| S16 | Temporal pattern query | Find recurring gaps in coverage based on schedules | Query expressible and < 2s |
+| S17 | Cross-domain range network | Coverage areas factoring multiple system types | Query expressible and < 5s |
+| S18 | What-if positioning | Given asset at location X, what capabilities enabled? | Query expressible and < 2s |
+
+### Why This Vision Matters for Database Selection
+
+The vision makes clear that the KB's purpose extends far beyond simple lookups:
+
+| Use Case | Lookup Optimization | Knowledge Generation |
+|----------|---------------------|---------------------|
+| Query type | Simple key-value | Complex multi-hop traversal |
+| Data model | Denormalized for speed | Rich relationships for discovery |
+| Success metric | Milliseconds latency | Expressibility + hours saved |
+| User | Real-time tracking system | Data scientist, analyst |
+| Value | Operational awareness | Strategic insights, predictive analysis |
+
+**Both use cases must be supported.** The benchmark evaluates whether a single architecture can serve both, or whether trade-offs are required.
+
+### Implications for Benchmark Design
+
+1. **Test query expressiveness**, not just latency
+2. **Include complex multi-hop scenarios** (S15-S18)
+3. **Evaluate graph algorithm support** for discovery
+4. **Consider data scientist workflows**, not just tracking system needs
+5. **Assess AI/LLM readiness** for future predictive capabilities
 
 ---
 
@@ -868,4 +994,5 @@ CREATE TABLE track_activity_log (
 |---------|------|--------|---------|
 | 1.0 | 2026-01-02 | Planning Session | Initial comprehensive plan |
 | 1.1 | 2026-01-02 | Planning Session | Added IPT requirements alignment, E-API architecture context, performance clarification |
+| 1.2 | 2026-01-02 | Planning Session | Added Knowledge Generation Vision section with data science context, additional benchmark scenarios S15-S18 |
 
