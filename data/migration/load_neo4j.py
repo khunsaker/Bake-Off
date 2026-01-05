@@ -341,7 +341,7 @@ def main():
     print("="*60)
 
     # Connection parameters (from docker-compose.yml)
-    uri = "bolt://localhost:7687"
+    uri = "bolt://localhost:17687"
     user = "neo4j"
     password = "sharkbakeoff"
 

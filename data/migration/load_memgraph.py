@@ -8,6 +8,7 @@ Note: Memgraph uses same Cypher syntax as Neo4j but different port
 import json
 from neo4j import GraphDatabase
 import sys
+from datetime import datetime
 
 
 class MemgraphLoader:
@@ -17,6 +18,15 @@ class MemgraphLoader:
             self.driver = GraphDatabase.driver(uri, auth=(user, password))
         else:
             self.driver = GraphDatabase.driver(uri)
+
+    @staticmethod
+    def format_datetime(dt_str):
+        """Convert ISO datetime to Memgraph LocalDateTime format (YYYY-MM-DDThh:mm:ss)"""
+        if not dt_str:
+            return None
+        # Parse ISO format and return in Memgraph format without microseconds/timezone
+        dt = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
+        return dt.strftime('%Y-%m-%dT%H:%M:%S')
 
     def close(self):
         self.driver.close()
@@ -56,6 +66,10 @@ class MemgraphLoader:
         with open(f'{data_dir}/organizations.json') as f:
             orgs = json.load(f)
 
+        # Format datetime strings for Memgraph
+        for org in orgs:
+            org['created_at'] = self.format_datetime(org['created_at'])
+
         with self.driver.session() as session:
             # Create organization nodes
             query = """
@@ -90,6 +104,10 @@ class MemgraphLoader:
         with open(f'{data_dir}/locations.json') as f:
             locs = json.load(f)
 
+        # Format datetime strings for Memgraph
+        for loc in locs:
+            loc['created_at'] = self.format_datetime(loc['created_at'])
+
         with self.driver.session() as session:
             query = """
                 UNWIND $locs AS loc
@@ -114,6 +132,12 @@ class MemgraphLoader:
 
         with open(f'{data_dir}/aircraft_instances.json') as f:
             aircraft = json.load(f)
+
+        # Format datetime strings for Memgraph
+        for a in aircraft:
+            a['created_at'] = self.format_datetime(a.get('created_at'))
+            a['updated_at'] = self.format_datetime(a.get('updated_at'))
+            a['source_timestamp'] = self.format_datetime(a.get('source_timestamp'))
 
         with self.driver.session() as session:
             # Load in batches of 1000
@@ -165,6 +189,12 @@ class MemgraphLoader:
 
         with open(f'{data_dir}/ship_instances.json') as f:
             ships = json.load(f)
+
+        # Format datetime strings for Memgraph
+        for s in ships:
+            s['created_at'] = self.format_datetime(s.get('created_at'))
+            s['updated_at'] = self.format_datetime(s.get('updated_at'))
+            s['source_timestamp'] = self.format_datetime(s.get('source_timestamp'))
 
         with self.driver.session() as session:
             query = """
@@ -274,6 +304,14 @@ class MemgraphLoader:
         with open(f'{data_dir}/relationships.json') as f:
             rels = json.load(f)
 
+        # Format datetime strings in relationship properties for Memgraph
+        for r in rels:
+            props = r.get('properties', {})
+            for key in list(props.keys()):
+                if any(x in key for x in ['timestamp', 'first_', 'last_', '_at', 'seen', 'refuel']):
+                    if props[key] and isinstance(props[key], str):
+                        props[key] = self.format_datetime(props[key])
+
         # Filter to relationship types we want in graph
         graph_rels = [r for r in rels if r['relationship_type'] in ['SEEN_WITH', 'VISITED', 'REFUELED_BY']]
 
@@ -343,8 +381,8 @@ def main():
     print("="*60)
 
     # Connection parameters (from docker-compose.yml)
-    # Memgraph uses port 7688 (different from Neo4j's 7687)
-    uri = "bolt://localhost:7688"
+    # Memgraph uses port 7689 (adjusted to avoid conflict)
+    uri = "bolt://localhost:7689"
     user = ""  # Memgraph doesn't require auth by default
     password = ""
 
