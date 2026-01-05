@@ -1,0 +1,772 @@
+[
+  {
+    "name": "Langley Air Force Base",
+    "icao_code": "KLFI",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 37.0829,
+    "longitude": -76.3605,
+    "id": 1,
+    "created_at": "2026-01-04T04:39:43.757446Z"
+  },
+  {
+    "name": "Seymour Johnson AFB",
+    "icao_code": "KGSB",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 35.3394,
+    "longitude": -77.9606,
+    "id": 2,
+    "created_at": "2026-01-04T04:39:43.757465Z"
+  },
+  {
+    "name": "Mountain Home AFB",
+    "icao_code": "KMUO",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 43.0436,
+    "longitude": -115.8722,
+    "id": 3,
+    "created_at": "2026-01-04T04:39:43.757467Z"
+  },
+  {
+    "name": "Nellis Air Force Base",
+    "icao_code": "KLSV",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 36.2362,
+    "longitude": -115.0342,
+    "id": 4,
+    "created_at": "2026-01-04T04:39:43.757467Z"
+  },
+  {
+    "name": "Cannon Air Force Base",
+    "icao_code": "KCVS",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 34.3828,
+    "longitude": -103.3217,
+    "id": 5,
+    "created_at": "2026-01-04T04:39:43.757468Z"
+  },
+  {
+    "name": "Whiteman Air Force Base",
+    "icao_code": "KSZL",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 38.7303,
+    "longitude": -93.5478,
+    "id": 6,
+    "created_at": "2026-01-04T04:39:43.757469Z"
+  },
+  {
+    "name": "Barksdale Air Force Base",
+    "icao_code": "KBAD",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 32.5018,
+    "longitude": -93.6627,
+    "id": 7,
+    "created_at": "2026-01-04T04:39:43.757470Z"
+  },
+  {
+    "name": "Minot Air Force Base",
+    "icao_code": "KMIB",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 48.4156,
+    "longitude": -101.3577,
+    "id": 8,
+    "created_at": "2026-01-04T04:39:43.757471Z"
+  },
+  {
+    "name": "McChord Field",
+    "icao_code": "KTCM",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 47.1376,
+    "longitude": -122.4764,
+    "id": 9,
+    "created_at": "2026-01-04T04:39:43.757471Z"
+  },
+  {
+    "name": "Travis Air Force Base",
+    "icao_code": "KSUU",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 38.2627,
+    "longitude": -121.9272,
+    "id": 10,
+    "created_at": "2026-01-04T04:39:43.757472Z"
+  },
+  {
+    "name": "Dover Air Force Base",
+    "icao_code": "KDOV",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 39.1295,
+    "longitude": -75.466,
+    "id": 11,
+    "created_at": "2026-01-04T04:39:43.757473Z"
+  },
+  {
+    "name": "RAF Lakenheath",
+    "icao_code": "EGUL",
+    "country": "GBR",
+    "location_type": "AIRFIELD",
+    "latitude": 52.4093,
+    "longitude": 0.561,
+    "id": 12,
+    "created_at": "2026-01-04T04:39:43.757473Z"
+  },
+  {
+    "name": "RAF Fairford",
+    "icao_code": "EGVA",
+    "country": "GBR",
+    "location_type": "AIRFIELD",
+    "latitude": 51.6822,
+    "longitude": -1.79,
+    "id": 13,
+    "created_at": "2026-01-04T04:39:43.757474Z"
+  },
+  {
+    "name": "Ramstein Air Base",
+    "icao_code": "ETAR",
+    "country": "DEU",
+    "location_type": "AIRFIELD",
+    "latitude": 49.4369,
+    "longitude": 7.6003,
+    "id": 14,
+    "created_at": "2026-01-04T04:39:43.757475Z"
+  },
+  {
+    "name": "Incirlik Air Base",
+    "icao_code": "LTAG",
+    "country": "TUR",
+    "location_type": "AIRFIELD",
+    "latitude": 37.0021,
+    "longitude": 35.4259,
+    "id": 15,
+    "created_at": "2026-01-04T04:39:43.757476Z"
+  },
+  {
+    "name": "Al Dhafra Air Base",
+    "icao_code": "OMAM",
+    "country": "ARE",
+    "location_type": "AIRFIELD",
+    "latitude": 24.2482,
+    "longitude": 54.5478,
+    "id": 16,
+    "created_at": "2026-01-04T04:39:43.757476Z"
+  },
+  {
+    "name": "Kadena Air Base",
+    "icao_code": "RODN",
+    "country": "JPN",
+    "location_type": "AIRFIELD",
+    "latitude": 26.3556,
+    "longitude": 127.768,
+    "id": 17,
+    "created_at": "2026-01-04T04:39:43.757477Z"
+  },
+  {
+    "name": "Misawa Air Base",
+    "icao_code": "RJSM",
+    "country": "JPN",
+    "location_type": "AIRFIELD",
+    "latitude": 40.7032,
+    "longitude": 141.3683,
+    "id": 18,
+    "created_at": "2026-01-04T04:39:43.757478Z"
+  },
+  {
+    "name": "Osan Air Base",
+    "icao_code": "RKSO",
+    "country": "KOR",
+    "location_type": "AIRFIELD",
+    "latitude": 37.0906,
+    "longitude": 127.0297,
+    "id": 19,
+    "created_at": "2026-01-04T04:39:43.757478Z"
+  },
+  {
+    "name": "Andersen Air Force Base",
+    "icao_code": "PGUA",
+    "country": "GUM",
+    "location_type": "AIRFIELD",
+    "latitude": 13.584,
+    "longitude": 144.9306,
+    "id": 20,
+    "created_at": "2026-01-04T04:39:43.757479Z"
+  },
+  {
+    "name": "Naval Station Norfolk",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 36.9461,
+    "longitude": -76.3134,
+    "id": 21,
+    "created_at": "2026-01-04T04:39:43.757480Z"
+  },
+  {
+    "name": "Naval Base San Diego",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 32.6769,
+    "longitude": -117.1264,
+    "id": 22,
+    "created_at": "2026-01-04T04:39:43.757481Z"
+  },
+  {
+    "name": "Naval Base Kitsap",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 47.7396,
+    "longitude": -122.6544,
+    "id": 23,
+    "created_at": "2026-01-04T04:39:43.757481Z"
+  },
+  {
+    "name": "Naval Station Mayport",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 30.3928,
+    "longitude": -81.4253,
+    "id": 24,
+    "created_at": "2026-01-04T04:39:43.757482Z"
+  },
+  {
+    "name": "Naval Air Station Oceana",
+    "icao_code": "KNTU",
+    "country": "USA",
+    "location_type": "BASE",
+    "latitude": 36.8207,
+    "longitude": -76.0335,
+    "id": 25,
+    "created_at": "2026-01-04T04:39:43.757483Z"
+  },
+  {
+    "name": "Naval Base Pearl Harbor",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 21.3644,
+    "longitude": -157.95,
+    "id": 26,
+    "created_at": "2026-01-04T04:39:43.757483Z"
+  },
+  {
+    "name": "Naval Base Yokosuka",
+    "icao_code": null,
+    "country": "JPN",
+    "location_type": "PORT",
+    "latitude": 35.2934,
+    "longitude": 139.6672,
+    "id": 27,
+    "created_at": "2026-01-04T04:39:43.757484Z"
+  },
+  {
+    "name": "Naval Base Sasebo",
+    "icao_code": null,
+    "country": "JPN",
+    "location_type": "PORT",
+    "latitude": 33.1542,
+    "longitude": 129.7292,
+    "id": 28,
+    "created_at": "2026-01-04T04:39:43.757485Z"
+  },
+  {
+    "name": "Naval Base Guam",
+    "icao_code": null,
+    "country": "GUM",
+    "location_type": "PORT",
+    "latitude": 13.45,
+    "longitude": 144.65,
+    "id": 29,
+    "created_at": "2026-01-04T04:39:43.757486Z"
+  },
+  {
+    "name": "HMNB Portsmouth",
+    "icao_code": null,
+    "country": "GBR",
+    "location_type": "PORT",
+    "latitude": 50.8014,
+    "longitude": -1.0978,
+    "id": 30,
+    "created_at": "2026-01-04T04:39:43.757486Z"
+  },
+  {
+    "name": "HMNB Devonport",
+    "icao_code": null,
+    "country": "GBR",
+    "location_type": "PORT",
+    "latitude": 50.3827,
+    "longitude": -4.1742,
+    "id": 31,
+    "created_at": "2026-01-04T04:39:43.757487Z"
+  },
+  {
+    "name": "Naval Base Rota",
+    "icao_code": null,
+    "country": "ESP",
+    "location_type": "PORT",
+    "latitude": 36.645,
+    "longitude": -6.35,
+    "id": 32,
+    "created_at": "2026-01-04T04:39:43.757488Z"
+  },
+  {
+    "name": "Naval Base Bahrain",
+    "icao_code": null,
+    "country": "BHR",
+    "location_type": "PORT",
+    "latitude": 26.15,
+    "longitude": 50.61,
+    "id": 33,
+    "created_at": "2026-01-04T04:39:43.757489Z"
+  },
+  {
+    "name": "Hartsfield-Jackson Atlanta Intl",
+    "icao_code": "KATL",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 33.6367,
+    "longitude": -84.4281,
+    "id": 34,
+    "created_at": "2026-01-04T04:39:43.757489Z"
+  },
+  {
+    "name": "Dallas/Fort Worth Intl",
+    "icao_code": "KDFW",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 32.8968,
+    "longitude": -97.038,
+    "id": 35,
+    "created_at": "2026-01-04T04:39:43.757490Z"
+  },
+  {
+    "name": "Denver Intl",
+    "icao_code": "KDEN",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 39.8561,
+    "longitude": -104.6737,
+    "id": 36,
+    "created_at": "2026-01-04T04:39:43.757491Z"
+  },
+  {
+    "name": "O'Hare Intl",
+    "icao_code": "KORD",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 41.9742,
+    "longitude": -87.9073,
+    "id": 37,
+    "created_at": "2026-01-04T04:39:43.757492Z"
+  },
+  {
+    "name": "Los Angeles Intl",
+    "icao_code": "KLAX",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 33.9425,
+    "longitude": -118.4081,
+    "id": 38,
+    "created_at": "2026-01-04T04:39:43.757492Z"
+  },
+  {
+    "name": "Charlotte Douglas Intl",
+    "icao_code": "KCLT",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 35.214,
+    "longitude": -80.9431,
+    "id": 39,
+    "created_at": "2026-01-04T04:39:43.757493Z"
+  },
+  {
+    "name": "Las Vegas McCarran Intl",
+    "icao_code": "KLAS",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 36.084,
+    "longitude": -115.1537,
+    "id": 40,
+    "created_at": "2026-01-04T04:39:43.757494Z"
+  },
+  {
+    "name": "Phoenix Sky Harbor Intl",
+    "icao_code": "KPHX",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 33.4342,
+    "longitude": -112.008,
+    "id": 41,
+    "created_at": "2026-01-04T04:39:43.757494Z"
+  },
+  {
+    "name": "Miami Intl",
+    "icao_code": "KMIA",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 25.7932,
+    "longitude": -80.2906,
+    "id": 42,
+    "created_at": "2026-01-04T04:39:43.757495Z"
+  },
+  {
+    "name": "Seattle-Tacoma Intl",
+    "icao_code": "KSEA",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 47.4502,
+    "longitude": -122.3088,
+    "id": 43,
+    "created_at": "2026-01-04T04:39:43.757496Z"
+  },
+  {
+    "name": "Newark Liberty Intl",
+    "icao_code": "KEWR",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 40.6895,
+    "longitude": -74.1745,
+    "id": 44,
+    "created_at": "2026-01-04T04:39:43.757497Z"
+  },
+  {
+    "name": "San Francisco Intl",
+    "icao_code": "KSFO",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 37.6213,
+    "longitude": -122.379,
+    "id": 45,
+    "created_at": "2026-01-04T04:39:43.757497Z"
+  },
+  {
+    "name": "London Heathrow",
+    "icao_code": "EGLL",
+    "country": "GBR",
+    "location_type": "AIRFIELD",
+    "latitude": 51.47,
+    "longitude": -0.4543,
+    "id": 46,
+    "created_at": "2026-01-04T04:39:43.757498Z"
+  },
+  {
+    "name": "Frankfurt Airport",
+    "icao_code": "EDDF",
+    "country": "DEU",
+    "location_type": "AIRFIELD",
+    "latitude": 50.0379,
+    "longitude": 8.5622,
+    "id": 47,
+    "created_at": "2026-01-04T04:39:43.757499Z"
+  },
+  {
+    "name": "Paris Charles de Gaulle",
+    "icao_code": "LFPG",
+    "country": "FRA",
+    "location_type": "AIRFIELD",
+    "latitude": 49.0097,
+    "longitude": 2.5479,
+    "id": 48,
+    "created_at": "2026-01-04T04:39:43.757499Z"
+  },
+  {
+    "name": "Dubai Intl",
+    "icao_code": "OMDB",
+    "country": "ARE",
+    "location_type": "AIRFIELD",
+    "latitude": 25.2528,
+    "longitude": 55.3644,
+    "id": 49,
+    "created_at": "2026-01-04T04:39:43.757500Z"
+  },
+  {
+    "name": "Singapore Changi",
+    "icao_code": "WSSS",
+    "country": "SGP",
+    "location_type": "AIRFIELD",
+    "latitude": 1.3644,
+    "longitude": 103.9915,
+    "id": 50,
+    "created_at": "2026-01-04T04:39:43.757501Z"
+  },
+  {
+    "name": "Hong Kong Intl",
+    "icao_code": "VHHH",
+    "country": "HKG",
+    "location_type": "AIRFIELD",
+    "latitude": 22.308,
+    "longitude": 113.9185,
+    "id": 51,
+    "created_at": "2026-01-04T04:39:43.757502Z"
+  },
+  {
+    "name": "Tokyo Narita",
+    "icao_code": "RJAA",
+    "country": "JPN",
+    "location_type": "AIRFIELD",
+    "latitude": 35.7653,
+    "longitude": 140.3863,
+    "id": 52,
+    "created_at": "2026-01-04T04:39:43.757502Z"
+  },
+  {
+    "name": "Tokyo Haneda",
+    "icao_code": "RJTT",
+    "country": "JPN",
+    "location_type": "AIRFIELD",
+    "latitude": 35.5494,
+    "longitude": 139.7798,
+    "id": 53,
+    "created_at": "2026-01-04T04:39:43.757503Z"
+  },
+  {
+    "name": "Seoul Incheon",
+    "icao_code": "RKSI",
+    "country": "KOR",
+    "location_type": "AIRFIELD",
+    "latitude": 37.4602,
+    "longitude": 126.4407,
+    "id": 54,
+    "created_at": "2026-01-04T04:39:43.757504Z"
+  },
+  {
+    "name": "Sydney Kingsford Smith",
+    "icao_code": "YSSY",
+    "country": "AUS",
+    "location_type": "AIRFIELD",
+    "latitude": -33.9399,
+    "longitude": 151.1753,
+    "id": 55,
+    "created_at": "2026-01-04T04:39:43.757504Z"
+  },
+  {
+    "name": "Port of Los Angeles",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 33.74,
+    "longitude": -118.27,
+    "id": 56,
+    "created_at": "2026-01-04T04:39:43.757505Z"
+  },
+  {
+    "name": "Port of Long Beach",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 33.755,
+    "longitude": -118.213,
+    "id": 57,
+    "created_at": "2026-01-04T04:39:43.757509Z"
+  },
+  {
+    "name": "Port of New York/New Jersey",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 40.67,
+    "longitude": -74.04,
+    "id": 58,
+    "created_at": "2026-01-04T04:39:43.757510Z"
+  },
+  {
+    "name": "Port of Savannah",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 32.12,
+    "longitude": -81.14,
+    "id": 59,
+    "created_at": "2026-01-04T04:39:43.757511Z"
+  },
+  {
+    "name": "Port of Houston",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 29.73,
+    "longitude": -95.27,
+    "id": 60,
+    "created_at": "2026-01-04T04:39:43.757512Z"
+  },
+  {
+    "name": "Port of Seattle",
+    "icao_code": null,
+    "country": "USA",
+    "location_type": "PORT",
+    "latitude": 47.57,
+    "longitude": -122.35,
+    "id": 61,
+    "created_at": "2026-01-04T04:39:43.757512Z"
+  },
+  {
+    "name": "Port of Shanghai",
+    "icao_code": null,
+    "country": "CHN",
+    "location_type": "PORT",
+    "latitude": 31.34,
+    "longitude": 121.64,
+    "id": 62,
+    "created_at": "2026-01-04T04:39:43.757513Z"
+  },
+  {
+    "name": "Port of Singapore",
+    "icao_code": null,
+    "country": "SGP",
+    "location_type": "PORT",
+    "latitude": 1.26,
+    "longitude": 103.83,
+    "id": 63,
+    "created_at": "2026-01-04T04:39:43.757514Z"
+  },
+  {
+    "name": "Port of Rotterdam",
+    "icao_code": null,
+    "country": "NLD",
+    "location_type": "PORT",
+    "latitude": 51.95,
+    "longitude": 4.14,
+    "id": 64,
+    "created_at": "2026-01-04T04:39:43.757515Z"
+  },
+  {
+    "name": "Port of Antwerp",
+    "icao_code": null,
+    "country": "BEL",
+    "location_type": "PORT",
+    "latitude": 51.27,
+    "longitude": 4.4,
+    "id": 65,
+    "created_at": "2026-01-04T04:39:43.757515Z"
+  },
+  {
+    "name": "Port of Hamburg",
+    "icao_code": null,
+    "country": "DEU",
+    "location_type": "PORT",
+    "latitude": 53.54,
+    "longitude": 9.97,
+    "id": 66,
+    "created_at": "2026-01-04T04:39:43.757516Z"
+  },
+  {
+    "name": "Port of Hong Kong",
+    "icao_code": null,
+    "country": "HKG",
+    "location_type": "PORT",
+    "latitude": 22.28,
+    "longitude": 114.16,
+    "id": 67,
+    "created_at": "2026-01-04T04:39:43.757517Z"
+  },
+  {
+    "name": "Port of Busan",
+    "icao_code": null,
+    "country": "KOR",
+    "location_type": "PORT",
+    "latitude": 35.1,
+    "longitude": 129.04,
+    "id": 68,
+    "created_at": "2026-01-04T04:39:43.757517Z"
+  },
+  {
+    "name": "Port of Dubai",
+    "icao_code": null,
+    "country": "ARE",
+    "location_type": "PORT",
+    "latitude": 25.28,
+    "longitude": 55.33,
+    "id": 69,
+    "created_at": "2026-01-04T04:39:43.757518Z"
+  },
+  {
+    "name": "Suez Canal",
+    "icao_code": null,
+    "country": "EGY",
+    "location_type": "PORT",
+    "latitude": 30.45,
+    "longitude": 32.34,
+    "id": 70,
+    "created_at": "2026-01-04T04:39:43.757519Z"
+  },
+  {
+    "name": "Strait of Hormuz",
+    "icao_code": null,
+    "country": "OMN",
+    "location_type": "PORT",
+    "latitude": 26.57,
+    "longitude": 56.25,
+    "id": 71,
+    "created_at": "2026-01-04T04:39:43.757520Z"
+  },
+  {
+    "name": "Strait of Malacca",
+    "icao_code": null,
+    "country": "MYS",
+    "location_type": "PORT",
+    "latitude": 2.52,
+    "longitude": 101.37,
+    "id": 72,
+    "created_at": "2026-01-04T04:39:43.757520Z"
+  },
+  {
+    "name": "Boise Airport",
+    "icao_code": "KBOI",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 43.5644,
+    "longitude": -116.2228,
+    "id": 73,
+    "created_at": "2026-01-04T04:39:43.757521Z"
+  },
+  {
+    "name": "Reno-Tahoe Intl",
+    "icao_code": "KRNO",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 39.4991,
+    "longitude": -119.7681,
+    "id": 74,
+    "created_at": "2026-01-04T04:39:43.757522Z"
+  },
+  {
+    "name": "Spokane Intl",
+    "icao_code": "KGEG",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 47.6199,
+    "longitude": -117.5339,
+    "id": 75,
+    "created_at": "2026-01-04T04:39:43.757522Z"
+  },
+  {
+    "name": "Anchorage Ted Stevens",
+    "icao_code": "PANC",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 61.1744,
+    "longitude": -149.9961,
+    "id": 76,
+    "created_at": "2026-01-04T04:39:43.757523Z"
+  },
+  {
+    "name": "Honolulu Intl",
+    "icao_code": "PHNL",
+    "country": "USA",
+    "location_type": "AIRFIELD",
+    "latitude": 21.3187,
+    "longitude": -157.9225,
+    "id": 77,
+    "created_at": "2026-01-04T04:39:43.757524Z"
+  }
+]

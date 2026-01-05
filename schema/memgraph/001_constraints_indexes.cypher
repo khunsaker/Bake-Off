@@ -17,8 +17,8 @@ CREATE CONSTRAINT ON (a:Aircraft) ASSERT EXISTS (a.shark_name);
 
 // MARITIME DOMAIN CONSTRAINTS
 CREATE CONSTRAINT ON (s:Ship) ASSERT s.mmsi IS UNIQUE;
-CREATE CONSTRAINT ON (s:Ship) ASSERT s.sconum IS UNIQUE;
-CREATE CONSTRAINT ON (s:Ship) ASSERT s.imo_number IS UNIQUE;
+// Note: sconum and imo_number are NOT unique because many ships have NULL values
+// Only 183/492 ships have sconum, 298/492 ships have imo_number
 CREATE CONSTRAINT ON (s:Ship) ASSERT EXISTS (s.shark_name);
 
 // ORGANIZATION CONSTRAINTS
