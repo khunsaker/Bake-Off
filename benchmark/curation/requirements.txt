@@ -1,0 +1,20 @@
+# Curation Testing Dependencies
+
+# Database drivers
+psycopg2-binary==2.9.9
+neo4j==5.14.1
+
+# Testing framework
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# HTTP client
+requests==2.31.0
+
+# Utilities
+python-dateutil==2.8.2
+tqdm==4.66.1
+
+# Reporting
+tabulate==0.9.0
+pyyaml==6.0.1
