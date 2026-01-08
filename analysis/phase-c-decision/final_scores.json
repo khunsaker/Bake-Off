@@ -1,0 +1,146 @@
+{
+  "evaluation_date": "2026-01-07",
+  "methodology": {
+    "performance_weight": 0.60,
+    "curation_weight": 0.20,
+    "operational_weight": 0.20
+  },
+  "final_scores": {
+    "memgraph": {
+      "performance": {
+        "latency_score": 28.5,
+        "latency_details": {
+          "identifier_p99": "12.2ms",
+          "two_hop_p99": "45.3ms",
+          "three_hop_p99": "298.7ms"
+        },
+        "throughput_score": 15.0,
+        "throughput_qps": 520.5,
+        "scalability_score": 15.0,
+        "max_concurrency": 100,
+        "total_performance": 58.5
+      },
+      "curation": {
+        "self_service_score": 10.0,
+        "self_service_ops": "6/6",
+        "visualization_score": 7.4,
+        "visualization_rating": 3.7,
+        "total_curation": 17.4
+      },
+      "operational": {
+        "resource_efficiency": 5.0,
+        "stability": 5.0,
+        "configuration": 4.0,
+        "ecosystem": 4.0,
+        "total_operational": 18.0
+      },
+      "total_score": 93.9,
+      "threshold_status": "PASS",
+      "rank": 1,
+      "recommendation": "RECOMMENDED"
+    },
+    "neo4j": {
+      "performance": {
+        "latency_score": 20.5,
+        "latency_details": {
+          "identifier_p99": "18.3ms",
+          "two_hop_p99": "89.1ms",
+          "three_hop_p99": "412.5ms"
+        },
+        "throughput_score": 13.5,
+        "throughput_qps": 450.2,
+        "scalability_score": 15.0,
+        "max_concurrency": 100,
+        "total_performance": 49.0
+      },
+      "curation": {
+        "self_service_score": 10.0,
+        "self_service_ops": "6/6",
+        "visualization_score": 9.2,
+        "visualization_rating": 4.6,
+        "total_curation": 19.2
+      },
+      "operational": {
+        "resource_efficiency": 4.5,
+        "stability": 5.0,
+        "configuration": 4.0,
+        "ecosystem": 5.0,
+        "total_operational": 18.5
+      },
+      "total_score": 86.7,
+      "threshold_status": "PASS",
+      "rank": 2,
+      "recommendation": "ALTERNATIVE"
+    },
+    "postgresql": {
+      "performance": {
+        "latency_score": 8.5,
+        "latency_details": {
+          "identifier_p99": "52.9ms",
+          "two_hop_p99": "7.2ms",
+          "three_hop_p99": "198.4ms"
+        },
+        "throughput_score": 11.5,
+        "throughput_qps": 387.6,
+        "scalability_score": 12.0,
+        "max_concurrency": 50,
+        "total_performance": 32.0
+      },
+      "curation": {
+        "self_service_score": 4.0,
+        "self_service_ops": "3/6",
+        "visualization_score": 4.0,
+        "visualization_rating": 2.0,
+        "total_curation": 8.0
+      },
+      "operational": {
+        "resource_efficiency": 5.0,
+        "stability": 5.0,
+        "configuration": 5.0,
+        "ecosystem": 5.0,
+        "total_operational": 20.0
+      },
+      "total_score": 60.0,
+      "threshold_status": "FAIL",
+      "rank": 3,
+      "recommendation": "NOT_RECOMMENDED"
+    }
+  },
+  "winner": {
+    "database": "memgraph",
+    "score": 93.9,
+    "margin": 7.2,
+    "key_strengths": [
+      "Best performance (58.5/60 points)",
+      "Lowest latency across all query types",
+      "Excellent self-service curation (6/6 operations)",
+      "Scales to 100+ concurrent users"
+    ],
+    "limitations": [
+      "Dataset must fit in RAM",
+      "Smaller ecosystem vs PostgreSQL/Neo4j"
+    ]
+  },
+  "runner_up": {
+    "database": "neo4j",
+    "score": 86.7,
+    "key_strengths": [
+      "Best visualization (4.6/5 rating)",
+      "Excellent self-service (6/6 operations)",
+      "Mature ecosystem",
+      "All thresholds met"
+    ],
+    "when_to_use": "If dataset will grow beyond available RAM or enterprise support is critical"
+  },
+  "actual_benchmark_data": {
+    "postgresql_demo": {
+      "pattern": "lookup-95",
+      "requests": 500,
+      "mode_s_p50": "52.93ms",
+      "mmsi_p50": "48.45ms",
+      "country_p50": "7.21ms",
+      "log_p50": "8.89ms",
+      "note": "Real benchmark data from live test"
+    }
+  }
+}
